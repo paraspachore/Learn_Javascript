@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Array().fill()</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+</head>
+<body>
+    <script>
+        const arr = new Array(8).fill(0);
+        document.writeln(arr + "</br>");
+        const arr2 = new Array(5).fill('five');
+        setTimeout(document.writeln(arr2 + "</br>"),4000);
+        const arr3 = new Array(3).fill("fill");
+        setTimeout(document.writeln(arr3 + "</br>"),4000);
+    </script>
+</body>
+</html>
