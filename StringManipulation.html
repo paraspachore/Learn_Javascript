@@ -12,33 +12,51 @@
         // +ve index starts from 0 (start)
         // -ve index starts from -1 (end)
         
-        console.log(data);
+        console.log(data); //Hey Everyone
 
-        console.log(data.toUpperCase());
-        console.log(data.toLowerCase());
+        console.log(data.toUpperCase()); //HEY EVERYONE
+        console.log(data.toLowerCase()); // hey everyone
 
-        console.log(data[2]);
-        console.log(data.at(-3));
-        console.log(data.slice(4,9));
-        console.log(data.slice(-8,-4));
+        console.log(data[2]); // y
+        console.log(data[-2]); // undefined
+        console.log(data.at(4)); // E
+        console.log(data.at(-3)); // o
+        console.log(data.slice(4,9)); // Every
+        console.log(data.slice(-8,-4)); // Ever
         console.clear;
         var sentence = "JavaScript is cool";
-        console.log(sentence);
-        var replacedStr = sentence.replace("JavaScript", "JS");
-        console.log(replacedStr);
-        console.log(sentence.includes("cool"));
+        console.log(sentence); // JavaScript is cool
+        var replacedStr = sentence.replace("JavaScript", "JS"); // JS is cool
+        console.log(replacedStr); // JS is cool
+        console.log(sentence.includes("cool")); //true
 
         var num = "123456";
-        console.log(parseInt(num));
+        console.log(parseInt(num)); // 123456
 
         var myName = "Paras Pachore";
-        console.log(myName.split(" "));
+        console.log(myName.split(" ")); 
+        /*(2) ['Paras', 'Pachore']
+        0: "Paras"
+        1: "Pachore"
+        length: 2
+        [[Prototype]]: Array(0)*/
+
         console.log(myName.split("a",4));
-        console.log(myName.split("a")[2]);
+        /*
+        (4) ['P', 'r', 's P', 'chore']
+        0: "P"
+        1: "r"
+        2: "s P"
+        3: "chore"
+        length: 4
+        [[Prototype]]: Array(0)
+        */
+        console.log(myName.split("a")[2]); //s P
+        // returns 2nd element of above array
 
         var str = "Hey guys welcome";
-        console.log(str.substring(4,8));
-        console.log(str.substr(4,8));
+        console.log(str.substring(4,8)); // guys
+        console.log(str.substr(4,8)); // guys wel
 
     </script>
 </body>
