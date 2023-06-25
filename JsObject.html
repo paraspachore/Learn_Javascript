@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Object & anonymous functon</title>
+</head>
+
+<body>
+    <script>
+        var obj = {
+            car_brand: "Tesla",
+            car_model: "Model 3.0",
+            price: "900000",
+            innerObj: {
+                car_condition: "well condition",
+                paint_condition: "Paint condition is good"
+                },
+            teslaAutoPilot: function () {
+            document.writeln("<h2>This car has Auto Pilot</h2>");
+            },
+        teslaAuto: function Auto(){
+            document.writeln("<h4>Auto Pilot</h4>");
+        }
+    }
+    obj.teslaAutoPilot();
+    document.writeln(obj.car_brand + "</br>",obj.innerObj.car_condition)
+    document.writeln("</br>",obj.innerObj.paint_condition)
+    obj.teslaAuto();
+
+    // next day
+    console.log(Object.keys(obj));
+    console.log(Object.values(obj));
+    console.log(Object.entries(obj));
+    document.writeln(Object.keys(obj));
+    document.writeln(Object.keys(obj.innerObj));
+
+    // document.writeln(Object.values(obj));
+    // document.writeln(Object.entries(obj));
+
+    </script>
+</body>
+
+</html>

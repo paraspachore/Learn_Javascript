@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM manipulation</title>
+    <style>
+        section{
+            width: 80%;
+        }
+    </style>
+</head>
+
+<body style="display: flex; flex-direction: column; align-items: center;">
+    <section>
+        <h3>Button & innerText</h3>
+        <button onclick="onClck()">Click Me</button>
+        <p id="bId">Heyy all...</p>
+        <hr>
+        <script>
+            function onClck() {
+                document.getElementById("bId").innerText = "Good morning";
+            }
+        </script>
+    </section>
+    <!-- ---------------------------------------------------------------------------------------------------------------- -->
+    <section>
+        <h3>Radio Buttons</h3>
+        <input type="radio" name="gender" value="male" id="gm"><label for="gm">Male</label>
+        <input type="radio" name="gender" value="female" id="gf"><label for="gf">Female</label><br><br>
+        <button onclick="genderChck()">Click here</button><span><button onclick="reset()">reset</button></span>
+        <hr>
+
+        <script>
+            function genderChck() {
+                var male = gm.value;
+                var female = gf.value;
+                // var male = document.getElementById("gm").value;
+                // var female = document.getElementById("gf").value;
+
+                gm.checked == true ? alert(male) : gf.checked == true ? alert(female) : alert("Not selected any..!");
+            }
+
+            function reset() {
+                document.getElementById("gm").checked = false;
+                document.getElementById("gf").checked = false;
+                // gm.checked=false;
+                // gf.checked=false;
+            }
+        </script>
+    </section>
+    <!-- ---------------------------------------------------------------------------------------------------------------- -->
+    <section>
+        <h3>Drop Down list</h3>
+        <select name="languages" id="langs">
+            <option value="No_course_selected">Select Any Course</option>
+            <option value="Java">Java</option>
+            <option value="Python">Python</option>
+            <option value="JavaScript">JavaScript</option>
+        </select>
+        <br><br>
+        <button onclick="courseSelect()">Select your Language</button>
+        <hr>
+        <script>
+            function courseSelect() {
+                var optedCourse = document.getElementById("langs").options[langs.selectedIndex].value;
+                alert(optedCourse);
+            }
+        </script>
+    </section>
+    <!-- ---------------------------------------------------------------------------------------------------------------- -->
+    <!-- Assignment (Checkbox) -->
+    <section>
+        <h3>Checkbox (Assignment) </h3>
+        <input type="checkbox" id="task1" class="inpTask" name="task" value="Task1"><label for="task1">Task 1</label>
+        <input type="checkbox" id="task2" class="inpTask" name="task" value="Task2"><label for="task2">Task 2</label>
+        <input type="checkbox" id="task3" class="inpTask" name="task" value="Task3"><label for="task3">Task 3</label>
+        <br><br>
+        <button onclick="showTasks()">Show Tasks</button>
+        <button id="btn_selectAll">Select All</button>
+        <script>
+            var clickedChck = true;
+            document.getElementById("btn_selectAll").onclick = function () {
+                tasks = document.querySelectorAll(".inpTask");
+                if (clickedChck == true) {
+                    tasks.forEach(element => {
+                        element.checked = true;
+                    });
+                    clickedChck = false;
+                    document.getElementById("btn_selectAll").innerText = "Unselect All";
+                } else {
+                    tasks.forEach(element => {
+                        element.checked = false;
+                    });
+                    clickedChck = true;
+                    document.getElementById("btn_selectAll").innerText = "Select All";
+                }
+            }
+            function showTasks() {
+                var chckb1 = document.getElementById("task1");
+                var chckb2 = document.getElementById("task2");
+                var chckb3 = document.getElementById("task3");
+
+                if(chckb1.checked==false && chckb2.checked==false && chckb3.checked==false){
+                    alert("Mark any of the checkbox");
+                }
+                if(chckb1.checked==true){
+                    alert(chckb1.value);
+                }
+                if(chckb2.checked==true){
+                    alert(chckb2.value);
+                }
+                if(chckb3.checked==true){
+                    alert(chckb3.value);
+                }
+            }
+        </script>
+    </section>
+</body>
+
+</html>

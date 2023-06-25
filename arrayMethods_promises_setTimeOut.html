@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Methods</title>
+</head>
+
+<body>
+    <!-- map, find, find, filter & reduce -->
+    <!-- different types of funcs -->
+    <!-- Promises -->
+    <!-- async & await -->
+    <!-- try n catch -->
+
+    <script>
+        // ------------------------------------------------------------
+        // this keyword -> It's a reference variable will 
+        // be pointing to the current instance(current object).
+
+        var obj = {
+            name: "Paras",
+            hello: function() {
+                console.log("outer",this);
+            },
+            anotherObj:{
+                name:"Pachore",
+                greet: function () {
+                    console.log("inner",this);
+                }
+            }
+        }
+        obj.hello();
+        obj.anotherObj.greet();
+        // ----------------------------------------
+        // Types of function //
+        // Named func
+        //     function newFun(){
+        //      code
+        //     }
+        //     newFun();
+        // Anonymous func
+        //     var anony = function(){
+        //      code
+        //     }
+        //     anony();
+        // Arrow func OR callback func
+        //     ()=>{
+        //      code
+        //     }
+        // ----------------------------------------
+        // ----------------------------------------
+        // map //
+        // It will work with each element and u can do
+        // any operations over there && it returns
+        // a new array
+        var Array1 = [1,2,3,4,5];
+        console.log("main Array",Array1)
+        var newArray = Array1.map((arrElement)=>{
+            return arrElement+20;
+        });
+        console.log(newArray);
+
+        // ----------------------------------------------------
+        newArray = Array1.filter((data)=>{
+            return data > 2;
+        });
+        // newArray = Array1.filter((data)=>{
+        //     if(data > 2){
+        //         return data;
+        //     }
+        // });
+        console.log(newArray);
+        // ----------------------------------------------------
+        var result = Array1.find((data) => data ==3);
+        console.log("find : ", result);
+
+        // ----------------------------------------------------
+        var prices = [100,200,300,400];
+        var totalPrice = prices.reduce((sum, data)=>{
+            return sum + data;
+        });
+        console.log(totalPrice);
+        //----
+        var cart = [
+            {
+                price: 100,
+                qty:4
+            },
+            {
+                price: 200,
+                qty:3
+            },
+            {
+                price: 500,
+                qty:1
+            }
+        ];
+        var totalCartPrice = cart.reduce((sum, data)=>{
+            return sum + data.price * data.qty;
+        },0);
+        console.log(totalCartPrice);
+        // ----------------------------------------------------
+        // Promise //
+        // resolve, reject, pending
+        var myPromise = new Promise((resolve, reject) => {
+            // resolve("Success");
+            // reject("Sorry some error occured");
+            setTimeout(() => {
+                resolve("Success");
+            }, 4000);
+        });
+        // myPromise.then((data)=>console.log(data)).catch((data)=>console.log(data));
+        myPromise
+        .then((data)=>{
+            var updatedData = "Hello it got "+data;
+            return updatedData;
+        })
+        .then((data)=>{
+            console.log(data);
+        })
+        .catch((data)=>{
+            console.log(data);
+        });
+        console.log("Last log print");
+    </script>
+</body>
+
+</html>

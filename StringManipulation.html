@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Manipulation</title>
+</head>
+<body>
+    <script>
+        var data = "Hey Everyone";
+        // +ve index starts from 0 (start)
+        // -ve index starts from -1 (end)
+        
+        console.log(data);
+
+        console.log(data.toUpperCase());
+        console.log(data.toLowerCase());
+
+        console.log(data[2]);
+        console.log(data.at(-3));
+        console.log(data.slice(4,9));
+        console.log(data.slice(-8,-4));
+        console.clear;
+        var sentence = "JavaScript is cool";
+        console.log(sentence);
+        var replacedStr = sentence.replace("JavaScript", "JS");
+        console.log(replacedStr);
+        console.log(sentence.includes("cool"));
+
+        var num = "123456";
+        console.log(parseInt(num));
+
+        var myName = "Paras Pachore";
+        console.log(myName.split(" "));
+        console.log(myName.split("a",4));
+        console.log(myName.split("a")[2]);
+
+        var str = "Hey guys welcome";
+        console.log(str.substring(4,8));
+        console.log(str.substr(4,8));
+
+    </script>
+</body>
+</html>
