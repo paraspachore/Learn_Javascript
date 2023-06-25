@@ -12,15 +12,17 @@
         // of global scope irrespective wheather var is
         // mentioned or not
         var a=10;
-        document.writeln("before Func", a);
+        document.writeln("before Func", a +"</br>");
         function demoFunc() {
             // var within function acts as local
             // excluding var within function acts as global
             var a=13;
-            document.writeln("Within Function", a);
+            document.writeln("Within Function", a +"</br>");
+            a += 2;
+            document.writeln("a + 2 Within Function", a +"</br>");
         }
         demoFunc();
-        document.writeln("After Func", a);
+        document.writeln("After Func", a +"</br>");
     </script>
 </body>
 </html>
